@@ -1,15 +1,14 @@
 import React from 'react'
+import TeamMember from '../TeamMemeber'
 
-class Team extends React.Component {
-
-  renderListItem(edge, i) {
-    const {name} = edge.node
+class TeamList extends React.Component {
+  renderListItem (edge, i) {
     return (
-      <li key={`team_item_${i}`}>{name}</li>
+      <li key={`team_item_${i}`}><TeamMember memeber={edge.node} /></li>
     )
   }
 
-  renderList() {
+  renderList () {
     const {edges} = this.props.data
     return (
       <ul>
@@ -18,8 +17,7 @@ class Team extends React.Component {
     )
   }
 
-  render() {
-    console.log(this.props)
+  render () {
     return (
       <section>
         <h2>Team</h2>
@@ -28,4 +26,4 @@ class Team extends React.Component {
     )
   }
 }
-export default Team
+export default TeamList
