@@ -7,6 +7,9 @@ services:
     working_dir: /app/src
     volumes:
       - ./src:/app/src/
+      - ./plugins:/app/plugins/
+      - ./package.json:/app/package.json
+      - ./gatsby-config.js:/app/gatsby-config.js
     ports:
       - 8000:8000
     environment:

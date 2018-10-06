@@ -15,7 +15,10 @@
     "gatsby-transformer-json": "^1.0.17",
     "gatsby-transformer-sharp": "^1.6.27",
     "netlify-cms": "^1.7.0",
+    "react-css-grid": "^2.0.0-0",
     "react-helmet": "^5.2.0",
+    "markdown-it": "^8.4.2",
+    "node-fetch": "^2.2.0",
     "typography-theme-alton": "^0.15.10"
   },
   "keywords": [

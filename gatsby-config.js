@@ -18,6 +18,12 @@ module.exports = {
         path: `${__dirname}/src/data/`
       }
     },
+    {
+      resolve: `gatsby-source-fbevents`,
+      options: {
+        key: `EAAEuJ0eoVmgBABZCyEsXVhOVnaQlcTOAYBu4f4y1q8FOJ34yvqdRZAjsgxKOZALzTIny2rXx69ykwZBzkdAsRVzwnIjHRiOaEhBb2xZArfWG0cARTmJyGVjZBLe8HgZCxGrfPkuY5ZBJynM2juuMiCa4ZCCpYyKU7b8sZBLHdOC9BVkkLGeXIvSZBKQF2Jl3CwJXwZBceA5YZATKRwydEwvL6Sba84AgiZA0gMT0xXRjMySaZBO2yS9nPEKNXIN`
+      }
+    },
     // This plugin exposes helper functions for processing
     // images with the NPM package “sharp”. It's used by
     // several other plugins.

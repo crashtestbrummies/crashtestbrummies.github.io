@@ -1,11 +1,11 @@
 import React from 'react'
 import Grid from 'react-css-grid'
-import TeamMember from '../TeamMemeber'
+import Event from '../Event'
 
-class TeamList extends React.Component {
+class EventsList extends React.Component {
   renderListItem (edge, i) {
     return (
-      <div key={`team_item_${i}`}><TeamMember memeber={edge.node} /></div>
+      <div key={`event_item_${i}`}><Event event={edge.node} /></div>
     )
   }
 
@@ -17,7 +17,7 @@ class TeamList extends React.Component {
   render () {
     return (
       <section>
-        <h2>Team</h2>
+        <h2>Events</h2>
         <Grid>
           {this.renderList()}
         </Grid>
@@ -25,4 +25,4 @@ class TeamList extends React.Component {
     )
   }
 }
-export default TeamList
+export default EventsList
