@@ -21,7 +21,13 @@ module.exports = {
     {
       resolve: `gatsby-source-fbevents`,
       options: {
-        key: `EAAEuJ0eoVmgBABZCyEsXVhOVnaQlcTOAYBu4f4y1q8FOJ34yvqdRZAjsgxKOZALzTIny2rXx69ykwZBzkdAsRVzwnIjHRiOaEhBb2xZArfWG0cARTmJyGVjZBLe8HgZCxGrfPkuY5ZBJynM2juuMiCa4ZCCpYyKU7b8sZBLHdOC9BVkkLGeXIvSZBKQF2Jl3CwJXwZBceA5YZATKRwydEwvL6Sba84AgiZA0gMT0xXRjMySaZBO2yS9nPEKNXIN`
+        key: process.env.FB_TOKEN
+      }
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `crashtestbrummies`
       }
     },
     // This plugin exposes helper functions for processing

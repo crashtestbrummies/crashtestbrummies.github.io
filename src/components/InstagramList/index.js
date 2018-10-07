@@ -1,11 +1,11 @@
 import React from 'react'
 import Grid from 'react-css-grid'
-import TeamMember from '../TeamMemeber'
+import Instagram from '../Instagram'
 
-class TeamList extends React.Component {
+class InstagramList extends React.Component {
   renderListItem (edge, i) {
     return (
-      <div key={`team_item_${i}`}><TeamMember memeber={edge.node} /></div>
+      <div key={`insta_item_${i}`}><Instagram instagram={edge.node} /></div>
     )
   }
 
@@ -17,12 +17,12 @@ class TeamList extends React.Component {
   render () {
     return (
       <section>
-        <h2>Team</h2>
-        <Grid width={100}>
+        <h2>Instagram</h2>
+        <Grid width={200} gap={20}>
           {this.renderList()}
         </Grid>
       </section>
     )
   }
 }
-export default TeamList
+export default InstagramList
