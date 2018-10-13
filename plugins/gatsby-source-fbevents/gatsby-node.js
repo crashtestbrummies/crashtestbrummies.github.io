@@ -4,10 +4,10 @@ const crypto = require('crypto')
 const digest = str => crypto.createHash(`md5`).update(JSON.stringify(str)).digest(`hex`)
 
 exports.sourceNodes = (
-  { boundActionCreators, createNodeId, createContentDigest },
+  { actions, createNodeId, createContentDigest },
   configOptions
 ) => {
-  const { createNode } = boundActionCreators
+  const { createNode } = actions
 
   // Helper function that processes a photo to match Gatsby's node structure
   const processEvent = event => {

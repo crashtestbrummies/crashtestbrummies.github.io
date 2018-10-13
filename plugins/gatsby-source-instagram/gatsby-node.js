@@ -43,10 +43,10 @@ function processDatum (datum) {
 }
 
 exports.sourceNodes = (
-  { boundActionCreators, createNodeId, createContentDigest },
+  { actions, createNodeId, createContentDigest },
   { username }
 ) => {
-  const { createNode } = boundActionCreators
+  const { createNode } = actions
 
   return fetch(`https://www.instagram.com/${username}/`)
     .then(res => res.text())

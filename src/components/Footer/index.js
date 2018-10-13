@@ -1,5 +1,5 @@
-/* global graphql */
 import React from 'react'
+import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 
 class Footer extends React.Component {

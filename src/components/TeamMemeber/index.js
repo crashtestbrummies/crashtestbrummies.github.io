@@ -1,5 +1,5 @@
-/* global graphql */
 import React from 'react'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 class TeamMember extends React.Component {
@@ -9,25 +9,26 @@ class TeamMember extends React.Component {
       hovered: false
     }
 
-    this.handleHover = this.handleHover.bind(this)
+    this.handleInteraction = this.handleInteraction.bind(this)
   }
 
-  handleHover () {
+  handleInteraction () {
     this.setState({
-      hovered: !this.state.hovered
+      hovered: true
     })
   }
 
   renderHeadshot () {
-    console.log(this.props)
     const {memeber} = this.props
     const type = this.state.hovered ? 'image' : 'peaky_image'
-    return (<Img sizes={memeber[type].childImageSharp.sizes} />)
+    return (<Img sizes={memeber[type].childImageSharp.sizes} alt={memeber.name} />)
   }
 
   render () {
+    const {hovered} = this.state
+    const handler = hovered ? null : this.handleInteraction
     return (
-      <div onMouseOut={this.handleHover} onMouseOver={this.handleHover}>
+      <div onMouseOver={handler} onClick={handler}>
         {this.renderHeadshot()}
       </div>
     )

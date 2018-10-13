@@ -21,9 +21,9 @@ const content = [
 ]
 
 class FAQs extends React.Component {
-  renderFAQ (faq) {
+  renderFAQ (faq, i) {
     return (
-      <React.Fragment>
+      <React.Fragment key={`faq_${i}`}>
         <dt>{faq.question}</dt>
         <dd>{faq.answer}</dd>
       </React.Fragment>
