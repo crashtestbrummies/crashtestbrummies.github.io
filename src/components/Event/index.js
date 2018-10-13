@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Markdown from 'markdown-it'
 
 const md = new Markdown({

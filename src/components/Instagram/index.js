@@ -1,14 +1,13 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 class Instagram extends React.Component {
   render () {
-    console.log(this.props)
     const {thumbnails, url} = this.props.instagram
     const [thumbnail] = thumbnails
-    console.log(url)
     return (
       <a href={url}>
-        <img src={thumbnail.src} />
+        <img src={thumbnail.src} alt={`Visit the Crash test Brummies Instagram page`} />
       </a>
     )
   }

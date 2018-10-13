@@ -1,19 +1,17 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { graphql } from 'gatsby'
 import TeamList from '../components/TeamList'
-import TeamMember from '../components/TeamMemeber'
 import EventsList from '../components/EventsList'
-import Event from '../components/Event'
 import JoinUs from '../components/JoinUs'
 import FAQs from '../components/FAQs'
 import InstagramList from '../components/InstagramList'
-import Instagram from '../components/Instagram'
+import Layout from '../components/layout'
 
 class IndexPage extends React.Component {
   render () {
-    const {allPlayersJson, allFacebookEvent, allInstaNode} = this.props.data
+    const {allPlayersJson, allFacebookEvent, allInstaNode, site} = this.props.data
     return (
-      <div>
+      <Layout site={site}>
         <p>The West Midlands' first men's Roller Derby team</p>
         <p>A band of Brummie brothers brought together in February 2012. All skatin', no hatin'!</p>
         <TeamList data={allPlayersJson} />
@@ -21,7 +19,7 @@ class IndexPage extends React.Component {
         <JoinUs />
         <FAQs />
         <InstagramList data={allInstaNode} />
-      </div>
+      </Layout>
     )
   }
 }
@@ -50,6 +48,9 @@ query TeamQuery {
         ...Instagram_details
       }
     }
+  }
+  site {
+    ...Footer_details
   }
 }
 `
