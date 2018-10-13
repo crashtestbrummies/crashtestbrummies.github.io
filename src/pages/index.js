@@ -50,6 +50,7 @@ query TeamQuery {
     }
   }
   site {
+    ...Header_details
     ...Footer_details
   }
 }

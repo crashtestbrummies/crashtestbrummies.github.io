@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Crash Team Brummies - Birmingham Roller Derby',
+    canonical: 'http://crashtestbrummies.co.uk/',
+    description: 'Men\'s Roller Derby Association (MRDA) Team based in Birmingham, UK.',
     facebook: 'http://facebook.com/crashTestBrummies/',
     instagram: 'https://www.instagram.com/crashtestbrummies/',
     email: 'info@crashtestbrummies.co.uk'
