@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Crash Team Brummies - Birmingham Roller Derby'
+    title: 'Crash Team Brummies - Birmingham Roller Derby',
+    facebook: 'http://facebook.com/crashTestBrummies/',
+    instagram: 'https://www.instagram.com/crashtestbrummies/',
+    email: 'info@crashtestbrummies.co.uk'
   },
   plugins: [
     'gatsby-plugin-react-helmet',

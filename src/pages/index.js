@@ -8,10 +8,11 @@ import JoinUs from '../components/JoinUs'
 import FAQs from '../components/FAQs'
 import InstagramList from '../components/InstagramList'
 import Instagram from '../components/Instagram'
+import Footer from '../components/Footer'
 
 class IndexPage extends React.Component {
   render () {
-    const {allPlayersJson, allFacebookEvent, allInstaNode} = this.props.data
+    const {allPlayersJson, allFacebookEvent, allInstaNode, site} = this.props.data
     return (
       <div>
         <p>The West Midlands' first men's Roller Derby team</p>
@@ -21,6 +22,7 @@ class IndexPage extends React.Component {
         <JoinUs />
         <FAQs />
         <InstagramList data={allInstaNode} />
+        <Footer data={site} />
       </div>
     )
   }
@@ -50,6 +52,9 @@ query TeamQuery {
         ...Instagram_details
       }
     }
+  }
+  site {
+    ...Footer_details
   }
 }
 `
