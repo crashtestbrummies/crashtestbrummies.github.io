@@ -19,13 +19,13 @@ class TeamMember extends React.Component {
   }
 
   renderHeadshot () {
-    const {memeber} = this.props
+    const { memeber } = this.props
     const type = this.state.hovered ? 'image' : 'peaky_image'
-    return (<Img sizes={memeber[type].childImageSharp.sizes} alt={memeber.name} />)
+    return (<Img fluid={memeber[type].childImageSharp.fluid} alt={memeber.name} />)
   }
 
   render () {
-    const {hovered} = this.state
+    const { hovered } = this.state
     const handler = hovered ? null : this.handleInteraction
     return (
       <div onMouseOver={handler} onClick={handler}>
@@ -45,9 +45,8 @@ export const TeamMemberFragment = graphql`
     peaky_image {
       id
       childImageSharp {
-        sizes(maxWidth: 900) {
-          tracedSVG
-          ...GatsbyImageSharpSizes
+        fluid(maxWidth: 170) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
@@ -55,9 +54,8 @@ export const TeamMemberFragment = graphql`
     image {
       id
       childImageSharp {
-        sizes(maxWidth: 900) {
-          tracedSVG
-          ...GatsbyImageSharpSizes
+        fluid(maxWidth: 170) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
