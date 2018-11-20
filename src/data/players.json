@@ -1,5 +1,11 @@
 [
   {
+    "name": "doom",
+    "position": "Blocker",
+    "image": "images/doom.jpg",
+    "peaky_image": "images/doom_peaky.jpg"
+  },
+  {
     "name": "Biggs",
     "position": "Blocker",
     "image": "images/biggs.jpg",
@@ -16,5 +22,95 @@
     "position": "Jammer",
     "image": "images/mike.jpg",
     "peaky_image": "images/mike_peaky.jpg"
+  },
+  {
+    "name": "aero",
+    "position": "Blocker",
+    "image": "images/aero.jpg",
+    "peaky_image": "images/aero_peaky.jpg"
+  },
+  {
+    "name": "baby",
+    "position": "Blocker",
+    "image": "images/baby_peaky.jpg",
+    "peaky_image": "images/baby_peaky.jpg"
+  },
+  {
+    "name": "brewski",
+    "position": "Blocker",
+    "image": "images/brewski.jpg",
+    "peaky_image": "images/brewski_peaky.jpg"
+  },
+  {
+    "name": "fish",
+    "position": "Blocker",
+    "image": "images/fish.jpg",
+    "peaky_image": "images/fish_peaky.jpg"
+  },
+  {
+    "name": "jason",
+    "position": "Blocker",
+    "image": "images/jason.jpg",
+    "peaky_image": "images/jason_peaky.jpg"
+  },
+  {
+    "name": "jc",
+    "position": "Blocker",
+    "image": "images/jc.jpg",
+    "peaky_image": "images/jc_peaky.jpg"
+  },
+  {
+    "name": "matt",
+    "position": "Blocker",
+    "image": "images/matt.jpg",
+    "peaky_image": "images/matt_peaky.jpg"
+  },
+  {
+    "name": "noob",
+    "position": "Blocker",
+    "image": "images/noob.jpg",
+    "peaky_image": "images/noob_peaky.jpg"
+  },
+  {
+    "name": "nuke",
+    "position": "Blocker",
+    "image": "images/nuke.jpg",
+    "peaky_image": "images/nuke_peaky.jpg"
+  },
+  {
+    "name": "rg",
+    "position": "Blocker",
+    "image": "images/rg.jpg",
+    "peaky_image": "images/rg_peaky.jpg"
+  },
+  {
+    "name": "roisin",
+    "position": "Blocker",
+    "image": "images/roisin.jpg",
+    "peaky_image": "images/roisin_peaky.jpg"
+  },
+  {
+    "name": "saint",
+    "position": "Blocker",
+    "image": "images/saint.jpg",
+    "peaky_image": "images/saint_peaky.jpg"
+  },
+  {
+    "name": "urbs",
+    "position": "Blocker",
+    "image": "images/urbs.jpg",
+    "peaky_image": "images/urbs_peaky.jpg"
+  },
+  {
+    "name": "villain",
+    "position": "Blocker",
+    "image": "images/villain_peaky.jpg",
+    "peaky_image": "images/villain_peaky.jpg"
+  },
+  {
+    "name": "yan",
+    "position": "Blocker",
+    "image": "images/yan.jpg",
+    "peaky_image": "images/yan_peaky.jpg"
   }
 ]

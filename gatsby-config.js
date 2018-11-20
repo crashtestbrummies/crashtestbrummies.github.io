@@ -29,6 +29,12 @@ module.exports = {
         username: `crashtestbrummies`
       }
     },
+    {
+      resolve: `gatsby-source-ftsgames`,
+      options: {
+        teamId: `17631`
+      }
+    },
     // This plugin exposes helper functions for processing
     // images with the NPM package “sharp”. It's used by
     // several other plugins.

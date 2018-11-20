@@ -5,11 +5,12 @@ import EventsList from '../components/EventsList'
 import JoinUs from '../components/JoinUs'
 import FAQs from '../components/FAQs'
 import InstagramList from '../components/InstagramList'
+import GamesList from '../components/GamesList'
 import Layout from '../components/layout'
 
 class IndexPage extends React.Component {
   render () {
-    const {allPlayersJson, allFacebookEvent, allInstaNode, site} = this.props.data
+    const {allPlayersJson, allFacebookEvent, allInstaNode, site, allGamesNode} = this.props.data
     return (
       <Layout site={site}>
         <p>The West Midlands' first men's Roller Derby team</p>
@@ -18,6 +19,7 @@ class IndexPage extends React.Component {
         <EventsList data={allFacebookEvent} />
         <JoinUs />
         <FAQs />
+        <GamesList data={allGamesNode} />
         <InstagramList data={allInstaNode} />
       </Layout>
     )
@@ -46,6 +48,13 @@ query TeamQuery {
     edges {
       node {
         ...Instagram_details
+      }
+    }
+  }
+  allGamesNode(limit: 5) {
+    edges {
+      node {
+        ...Game_details
       }
     }
   }

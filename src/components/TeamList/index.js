@@ -18,7 +18,7 @@ class TeamList extends React.Component {
     return (
       <section>
         <h2>Team</h2>
-        <Grid width={100}>
+        <Grid width={150}>
           {this.renderList()}
         </Grid>
       </section>
