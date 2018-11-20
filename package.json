@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "cheerio-tableparser": "^1.0.1",
     "gatsby": "^2.0.0",
     "gatsby-image": "^2.0.14",
     "gatsby-link": "^2.0.4",
@@ -20,7 +21,8 @@
     "react": "^16.5.2",
     "react-css-grid": "^2.0.0-0",
     "react-dom": "^16.5.2",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "tabletojson": "^0.9.8"
   },
   "keywords": [
     "gatsby"
