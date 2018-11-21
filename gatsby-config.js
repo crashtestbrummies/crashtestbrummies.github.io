@@ -8,6 +8,7 @@ module.exports = {
     email: 'info@crashtestbrummies.co.uk'
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-json',
     {
