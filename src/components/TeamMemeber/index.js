@@ -1,36 +1,22 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { Wrapper, Text } from './styles.js'
 
 class TeamMember extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      hovered: false
-    }
-
-    this.handleInteraction = this.handleInteraction.bind(this)
-  }
-
-  handleInteraction () {
-    this.setState({
-      hovered: true
-    })
-  }
-
   renderHeadshot () {
     const { memeber } = this.props
-    const type = this.state.hovered ? 'image' : 'peaky_image'
+    const type = this.state.hovered ? 'peaky_image' : 'image'
     return (<Img fluid={memeber[type].childImageSharp.fluid} alt={memeber.name} />)
   }
 
   render () {
-    const { hovered } = this.state
-    const handler = hovered ? null : this.handleInteraction
+    const { name, number, image } = this.props.memeber
     return (
-      <div onMouseOver={handler} onClick={handler}>
-        {this.renderHeadshot()}
-      </div>
+      <Wrapper>
+        <Img fluid={image.childImageSharp.fluid} alt={name} />
+        <Text>{number} {'//'} {name}</Text>
+      </Wrapper>
     )
   }
 }
@@ -40,7 +26,7 @@ export const TeamMemberFragment = graphql`
   fragment TeamMember_details on PlayersJson {
     id
     name
-    position
+    number
 
     peaky_image {
       id
@@ -54,7 +40,7 @@ export const TeamMemberFragment = graphql`
     image {
       id
       childImageSharp {
-        fluid(maxWidth: 170) {
+        fluid(maxWidth: 288) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }

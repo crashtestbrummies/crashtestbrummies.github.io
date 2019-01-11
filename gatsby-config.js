@@ -36,6 +36,19 @@ module.exports = {
         teamId: `17631`
       }
     },
+    {
+      resolve: `@wapps/gatsby-plugin-fonts`,
+      options: {
+        googleFonts: {
+          families: [
+            'Oswald:400,600'
+          ],
+          subsets: [
+            'latin'
+          ]
+        }
+      }
+    },
     // This plugin exposes helper functions for processing
     // images with the NPM package “sharp”. It's used by
     // several other plugins.

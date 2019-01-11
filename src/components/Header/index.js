@@ -1,18 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import Navigation from '../Navigation'
+import Img from 'gatsby-image'
+import { HeroContainer, HeroTextImage } from './styles.js'
 
 class Header extends React.Component {
   render () {
-    const {title, canonical, description} = this.props.data.siteMetadata
+    const { title, canonical, description } = this.props.data.siteMetadata
+    const { logo, heroText, hero } = this.props
     return (
-      <div
-        style={{
-          background: 'black',
-          color: 'white',
-          marginBottom: '1.45rem'
-        }}
-      >
+      <div>
         <Helmet>
           <meta charSet='utf-8' />
           <title>{title}</title>
@@ -20,15 +18,13 @@ class Header extends React.Component {
           <meta name='description' content={description} />
           <meta property='og:type' content='website' />
         </Helmet>
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '1.45rem 1.0875rem'
-          }}
-        >
-          <h1 style={{ margin: 0 }}>{title}</h1>
-        </div>
+        <Navigation logo={logo} title={title} canonical={canonical} />
+        <HeroContainer>
+          <HeroTextImage>
+            <Img fluid={heroText.childImageSharp.fluid} />
+          </HeroTextImage>
+          <Img fluid={hero.childImageSharp.fluid} />
+        </HeroContainer>
       </div>
     )
   }
@@ -44,4 +40,21 @@ export const HeaderFragment = graphql`
       description
     }
   }
+
+  fragment Header_hero on File {
+    childImageSharp {
+      fluid(maxWidth: 1200) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
+  fragment Header_hero_text on File {
+    childImageSharp {
+      fluid(maxWidth: 1200) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+
 `

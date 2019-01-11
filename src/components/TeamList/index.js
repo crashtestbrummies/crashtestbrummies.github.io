@@ -1,26 +1,26 @@
 import React from 'react'
-import Grid from 'react-css-grid'
 import TeamMember from '../TeamMemeber'
+import { Wrapper, Item } from './styles.js'
 
 class TeamList extends React.Component {
   renderListItem (edge, i) {
     return (
-      <div key={`team_item_${i}`}><TeamMember memeber={edge.node} /></div>
+      <Item key={`team_item_${i}`}><TeamMember memeber={edge.node} /></Item>
     )
   }
 
   renderList () {
-    const {edges} = this.props.data
+    const { edges } = this.props.data
     return edges.map(this.renderListItem)
   }
 
   render () {
     return (
-      <section>
-        <h2>Team</h2>
-        <Grid width={150}>
+      <section id={'team'}>
+        <h2>The Team</h2>
+        <Wrapper>
           {this.renderList()}
-        </Grid>
+        </Wrapper>
       </section>
     )
   }

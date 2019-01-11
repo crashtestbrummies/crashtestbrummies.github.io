@@ -4,10 +4,11 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@wapps/gatsby-plugin-fonts": "^1.0.2",
     "babel-plugin-styled-components": "^1.8.0",
     "cheerio": "^1.0.0-rc.2",
     "cheerio-tableparser": "^1.0.1",
-    "gatsby": "^2.0.0",
+    "gatsby": "^2.0.85",
     "gatsby-image": "^2.0.14",
     "gatsby-link": "^2.0.4",
     "gatsby-plugin-offline": "^2.0.6",

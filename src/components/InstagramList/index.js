@@ -1,6 +1,7 @@
 import React from 'react'
 import Grid from 'react-css-grid'
 import Instagram from '../Instagram'
+import styled from 'styled-components'
 
 class InstagramList extends React.Component {
   renderListItem (edge, i) {
@@ -10,7 +11,7 @@ class InstagramList extends React.Component {
   }
 
   renderList () {
-    const {edges} = this.props.data
+    const { edges } = this.props.data
     return edges.map(this.renderListItem)
   }
 

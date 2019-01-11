@@ -18,10 +18,10 @@ Already a derby skater? No worries!! We have an open door policy for existing de
 class JoinUs extends React.Component {
   render () {
     return (
-      <section>
+      <section id={'join-us'}>
         <h2>Join us</h2>
         <Grid>
-          <div dangerouslySetInnerHTML={{__html: content}} />
+          <div dangerouslySetInnerHTML={{ __html: content }} />
         </Grid>
       </section>
     )

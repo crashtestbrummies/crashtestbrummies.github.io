@@ -2,16 +2,20 @@ version: '2.1'
 services:
   web:
     build: ./
-    command: npm run develop
-    # command: sleep infinity
+    # command: yarn
+    # command: yarn run develop
+    command: sleep infinity
     working_dir: /app/src
     volumes:
+      - ./.git:/app/.git/
       - ./src:/app/src/
+      - ./public:/app/public/
       - ./plugins:/app/plugins/
       - ./package.json:/app/package.json
+      - ./yarn.lock:/app/yarn.lock
       - ./gatsby-config.js:/app/gatsby-config.js
     ports:
       - 8000:8000
     environment:
       - HOST=0.0.0.0
-      - FB_TOKEN={token}
+      - FB_TOKEN=EAAEuJ0eoVmgBACoOsk4EmoiVIDPdBRjJUfhXuBORPjjPGIPKkGfFJnXZA2tvcT6SeNyEmY68hlLZC0I1QSQtEeZBex3P01DogJHOdiZCuhFOdwHG172O9zAgZBCualHK2wR3ZAeRZC5G79ZAOru6K81yABaM8lbVT68ZD

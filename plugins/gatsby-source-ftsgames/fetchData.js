@@ -5,7 +5,7 @@ module.exports = function (teamId) {
 
   return new Promise(function (resolve, reject) {
     tabletojson.convertUrl(url, function (tablesAsJson) {
-      resolve(tablesAsJson[6])
+      resolve(tablesAsJson[tablesAsJson.length - 1])
     })
   })
 }
