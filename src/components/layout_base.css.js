@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import media from './_helpers/media'
 
 export default createGlobalStyle`
   body {
@@ -21,6 +22,13 @@ export default createGlobalStyle`
 
   h2 {
     font-size: 3em;
+    transform: rotate(0deg);
+
+    ${media.tablet`
+      font-size: 2em;
+      margin-bottom: 0.5em;
+      transform: rotate(-1deg);
+    `}
   }
 
   [class*='blank_section__'] h2 {
@@ -29,5 +37,9 @@ export default createGlobalStyle`
 
   p {
     margin-bottom: 1em;
+  }
+
+  a {
+    color: #010101;
   }
 `

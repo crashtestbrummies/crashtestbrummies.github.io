@@ -1,15 +1,15 @@
-export default {
-  table: {
-    width: '100%',
-    margin: '20px auto',
-    tableLayout: 'auto'
-  },
+import styled from 'styled-components'
+import media from '../_helpers/media'
 
-  tr_played: {
-    backgroundColor: '#efefef'
-  },
+export const GameTable = styled.table`
+  width: 100%;
+  margin: 20px auto;
+  table-layout: auto;
+  border-spacing: 10px;
+  border-collapse: separate;
 
-  tr_not_played: {
-    backgroundColor: '#FFEB3B'
-  }
-}
+  ${media.tablet`
+    font-size: 0.5em;
+    border-spacing: 5px;
+  `}
+`

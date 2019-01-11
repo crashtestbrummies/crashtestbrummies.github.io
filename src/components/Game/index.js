@@ -1,20 +1,22 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import styles from '../GamesList/styles.js'
+import { PlayedRow, NotPlayedRow } from './styles.js'
+
+const brummiesStyle = { backgroundColor: '#fff' }
 
 class Game extends React.Component {
   render () {
-    console.log(this.props)
     const { Date, Home_Team, Visitor_Team, Score, Score_2 } = this.props.game
-    const style = Score ? styles.tr_played : styles.tr_not_played
+    const homeStyle = Home_Team === 'Brummies' ? brummiesStyle : {}
+    const visitorStyle = Visitor_Team === 'Brummies' ? brummiesStyle : {}
     return (
-      <tr style={style}>
+      <PlayedRow>
         <td>{Date}</td>
-        <td>{Home_Team}</td>
-        <td>{Score}</td>
-        <td>{Visitor_Team}</td>
-        <td>{Score_2}</td>
-      </tr>
+        <td style={homeStyle}>{Home_Team}</td>
+        <td style={homeStyle}>{Score}</td>
+        <td style={visitorStyle}>{Visitor_Team}</td>
+        <td style={visitorStyle}>{Score_2}</td>
+      </PlayedRow>
     )
   }
 }

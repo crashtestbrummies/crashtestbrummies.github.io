@@ -1,5 +1,6 @@
 import React from 'react'
 import Grid from 'react-css-grid'
+import { Title, Description } from './styles.js'
 
 const content = [
   {
@@ -24,8 +25,8 @@ class FAQs extends React.Component {
   renderFAQ (faq, i) {
     return (
       <React.Fragment key={`faq_${i}`}>
-        <dt>{faq.question}</dt>
-        <dd>{faq.answer}</dd>
+        <Title>{faq.question}</Title>
+        <Description>{faq.answer}</Description>
       </React.Fragment>
     )
   }

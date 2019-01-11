@@ -26,19 +26,13 @@ class IndexPage extends React.Component {
           <TeamList data={allPlayersJson} />
         </Section>
         <Section theme='tear'>
-          <EventsList data={allFacebookEvent} />
-        </Section>
-        <Section>
           <JoinUs />
         </Section>
-        <Section theme='tear'>
+        <Section>
           <FAQs />
         </Section>
-        <Section>
-          <GamesList data={allGamesNode} />
-        </Section>
         <Section theme='tear'>
-          <InstagramList data={allInstaNode} />
+          <GamesList data={allGamesNode} />
         </Section>
       </Layout>
     )
@@ -70,7 +64,7 @@ query TeamQuery {
       }
     }
   }
-  allGamesNode(limit: 5) {
+  allGamesNode(limit: 5, sort: {fields: [date], order: DESC}) {
     edges {
       node {
         ...Game_details

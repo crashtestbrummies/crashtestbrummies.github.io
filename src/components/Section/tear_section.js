@@ -2,21 +2,35 @@ import React from 'react'
 import styled from 'styled-components'
 import TopTearImage from '../../images/section_bg_top.png'
 import BottomTearImage from '../../images/section_bg_bottom.png'
+import media from '../_helpers/media'
 
 const Wrapper = styled.div`
   background: #f5be0b;
-  transform: rotate(-2deg);
-  width: 110%;
-  margin-left: -5%;
   margin-bottom: 6em;
   color: #010101;
   text-align: center;
+  transform: rotate(-2deg);
+  width: 110%;
+  margin-left: -5%;
+
+
+  ${media.tablet`
+      transform: rotate(0deg);
+      width: 100%;
+      margin-left: 0%;
+      margin-bottom: 2em;
+  `}
 `
 
 const ContentWrapper = styled.section`
   max-width: 960px;
   margin: 0 auto;
   padding: 1em 2em 2em;
+
+  ${media.tablet`
+      padding-top: 0;
+  `}
+
 `
 
 const TopTear = styled.i`

@@ -1,6 +1,6 @@
 import React from 'react'
 import Game from '../Game'
-import styles from './styles.js'
+import { GameTable } from './styles.js'
 
 class GamesList extends React.Component {
   renderListItem (edge, i) {
@@ -18,16 +18,18 @@ class GamesList extends React.Component {
     return (
       <section>
         <h2>Games</h2>
-        <table style={styles.table}>
+        <GameTable>
           <thead>
-            <th>Date</th>
-            <th>Home</th>
-            <th>Score</th>
-            <th>Away</th>
-            <th>Score</th>
+            <tr>
+              <th>Date</th>
+              <th>Home</th>
+              <th>Score</th>
+              <th>Away</th>
+              <th>Score</th>
+            </tr>
           </thead>
           <tbody>{this.renderList()}</tbody>
-        </table>
+        </GameTable>
       </section>
     )
   }

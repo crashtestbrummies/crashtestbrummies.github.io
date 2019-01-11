@@ -1,19 +1,20 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
-import Grid from 'react-css-grid'
+import { Wrapper, FooterLink } from './styles.js'
 
 class Footer extends React.Component {
   render () {
-    const {facebook, instagram, email} = this.props.data.siteMetadata
+    const { facebook, instagram, email } = this.props.data.siteMetadata
     return (
-      <section>
-        <Grid>
-          <Link to={email}>Email</Link>
-          <Link to={facebook}>Facebook</Link>
-          <Link to={instagram}>Instagram</Link>
-        </Grid>
-      </section>
+      <Wrapper>
+        <p>{'© Copyright 2019 Crash Test Brummies // Hero image by X // Headshots by Floyd King Derby Photography'}</p>
+        <p>
+          <FooterLink to={email}>Email</FooterLink>{' // '}
+          <FooterLink to={facebook}>Facebook</FooterLink>{' // '}
+          <FooterLink to={instagram}>Instagram</FooterLink>
+        </p>
+      </Wrapper>
     )
   }
 }

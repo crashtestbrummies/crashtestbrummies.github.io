@@ -26,7 +26,7 @@ class Navigation extends React.Component {
 
   renderList (LeftMarkers, RightMarkers, item) {
     return (
-      <NavLink to={item.link}>
+      <NavLink to={item.link} key={item.link}>
         <RightMarkers />
         {item.name}
         <LeftMarkers />

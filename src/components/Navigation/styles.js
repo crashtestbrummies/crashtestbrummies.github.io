@@ -12,8 +12,8 @@ export const NavBar = styled.div`
   position: relative;
   z-index: 2;
 
-  ${media.tablet`border-top-width: 35px;`}
-  ${media.phone`border-top-width: 5px;`}
+  ${media.tablet`border-top-width: 10px;`}
+  ${media.phone`border-top-width: 4px;`}
 `
 
 export const LogoNavigation = styled.h1`

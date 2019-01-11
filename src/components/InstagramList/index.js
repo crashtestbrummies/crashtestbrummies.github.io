@@ -1,12 +1,11 @@
 import React from 'react'
-import Grid from 'react-css-grid'
 import Instagram from '../Instagram'
-import styled from 'styled-components'
+import { Wrapper, Item } from './styles.js'
 
 class InstagramList extends React.Component {
   renderListItem (edge, i) {
     return (
-      <div key={`insta_item_${i}`}><Instagram instagram={edge.node} /></div>
+      <Item key={`insta_item_${i}`}><Instagram instagram={edge.node} /></Item>
     )
   }
 
@@ -19,9 +18,9 @@ class InstagramList extends React.Component {
     return (
       <section>
         <h2>Instagram</h2>
-        <Grid width={200} gap={20}>
+        <Wrapper>
           {this.renderList()}
-        </Grid>
+        </Wrapper>
       </section>
     )
   }
