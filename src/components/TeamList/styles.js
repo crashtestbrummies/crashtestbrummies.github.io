@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 `
 
 export const Item = styled.div`
-  flex: 1 0 33%;
+  flex: 0 1 33%;
 
-  ${media.tablet`flex: 1 0 50%;`}
+  ${media.tablet`flex: 0 1 50%;`}
 `

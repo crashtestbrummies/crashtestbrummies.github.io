@@ -114,7 +114,7 @@
   {
     "name": "The Villain",
     "position": "Blocker",
-    "image": "images/villain_peaky.jpg",
+    "image": "images/placeholder.jpg",
     "peaky_image": "images/villain_peaky.jpg",
     "number": "44"
   },
@@ -170,8 +170,8 @@
   {
     "name": "El",
     "position": "Blocker",
-    "image": "images/matt.jpg",
-    "peaky_image": "images/matt_peaky.jpg",
+    "image": "images/placeholder.jpg",
+    "peaky_image": "images/placeholder.jpg",
     "number": "Head Coach"
   }
 ]
