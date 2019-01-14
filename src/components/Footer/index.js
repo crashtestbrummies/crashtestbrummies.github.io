@@ -10,9 +10,9 @@ class Footer extends React.Component {
       <Wrapper>
         <p>{'© Copyright 2019 Crash Test Brummies // Hero image by X // Headshots by Floyd King Derby Photography'}</p>
         <p>
-          <FooterLink to={email}>Email</FooterLink>{' // '}
-          <FooterLink to={facebook}>Facebook</FooterLink>{' // '}
-          <FooterLink to={instagram}>Instagram</FooterLink>
+          <FooterLink href={`mailto://${email}`}>Email</FooterLink>{' // '}
+          <FooterLink href={facebook}>Facebook</FooterLink>{' // '}
+          <FooterLink href={instagram}>Instagram</FooterLink>
         </p>
       </Wrapper>
     )

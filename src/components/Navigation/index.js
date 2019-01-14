@@ -48,7 +48,7 @@ class Navigation extends React.Component {
       <NavBar>
         {this.renderFirstHalfNavigation()}
         <LogoNavigation>
-          <LogoLink to={canonical}>
+          <LogoLink href={canonical}>
             {title}
             <Img fluid={logo.childImageSharp.fluid} />
           </LogoLink>

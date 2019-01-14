@@ -23,7 +23,7 @@ export const LogoNavigation = styled.h1`
 
 `
 
-export const LogoLink = styled(Link)`
+export const LogoLink = styled.a`
   text-indent: -9999px;
   line-height: 0;
   display: block;
