@@ -10,5 +10,4 @@ export const Item = styled.div`
   flex: 1 0 33%;
 
   ${media.tablet`flex: 1 0 50%;`}
-  ${media.phone`flex: 1 0 100%;`}
 `
