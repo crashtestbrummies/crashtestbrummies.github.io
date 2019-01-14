@@ -1,18 +1,37 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Link from 'gatsby-link'
-import { Wrapper, FooterLink } from './styles.js'
+import { Wrapper, FooterLink, CreditLink } from './styles.js'
 
 class Footer extends React.Component {
+  renderHeroCredit () {
+    return (
+      <React.Fragment>
+        Hero image by <CreditLink href={'https://www.facebook.com/K.Jaros.Roller.Derby.Photo/'}>Krzysztof Jaros Roller Derby Photography</CreditLink>
+        {` // `}
+      </React.Fragment>
+    )
+  }
+
+  renderHeadshotCredit () {
+    return (
+      <React.Fragment>
+        Headshots by <CreditLink href={'https://www.facebook.com/floydkingderbyphotography/'}>Floyd King Derby Photography</CreditLink>
+      </React.Fragment>
+    )
+  }
+
   render () {
-    const { facebook, instagram, email } = this.props.data.siteMetadata
+    const { facebook, instagram } = this.props.data.siteMetadata
     return (
       <Wrapper>
-        <p>{'© Copyright 2019 Crash Test Brummies // Hero image by X // Headshots by Floyd King Derby Photography'}</p>
         <p>
-          <FooterLink href={`mailto://${email}`}>Email</FooterLink>{' // '}
           <FooterLink href={facebook}>Facebook</FooterLink>{' // '}
           <FooterLink href={instagram}>Instagram</FooterLink>
+        </p>
+        <p>
+          {`© Copyright 2019 Crash Test Brummies // `}
+          {this.renderHeroCredit()}
+          {this.renderHeadshotCredit()}
         </p>
       </Wrapper>
     )
