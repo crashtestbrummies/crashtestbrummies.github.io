@@ -19,7 +19,7 @@ class IndexPage extends React.Component {
       <Layout site={site} logo={logo.edges[0].node} heroText={heroText.edges[0].node} hero={hero.edges[0].node}>
         <Section theme='tear'>
           <h2>Who are we?</h2>
-          <p>The West Midlands' first men's Roller Derby team. A band of Brummie brothers brought together in February 2012. All skatin', no hatin'!</p>
+          <p>The West Midlands' first men's Roller Derby team. Established in 2012, became members of the MRDA in 2015, and achieved world ranking status in 2018. We have members from all over Brum and beyond! All skatin', no hatin'!</p>
           <p>We have an open door policy for all existing derby skaters and we are always on the look out for new skaters to join our ranks.</p>
         </Section>
         <Section>

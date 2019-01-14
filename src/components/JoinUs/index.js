@@ -8,11 +8,11 @@ const md = new Markdown({
 })
 
 const content = md.render(`
-We are always on the look out for new skaters to join our ranks!
+We are always on the look out for new members, from people who have never skated before to already established skaters looking for a league in the West Midlands.
 
-Keep an eye on our Facebook page for upcoming events and intakes [here](https://www.facebook.com/CrashTestBrummies) or get in touch with us at info@crashtestbrummies.co.uk.
+Keep an eye on our [Facebook page](https://www.facebook.com/CrashTestBrummies/) for upcoming events and intakes or [get in touch with us](http://m.me/CrashTestBrummies/).
 
-Already a derby skater? No worries!! We have an open door policy for existing derby skaters both male & female – just turn up and get stuck in!
+Already a derby skater? No worries!! We have an open door policy that is Open To All derby skaters – just turn up and get stuck in! The only exception to this is if we have an organised game against your league announced (sorry)
 `)
 
 class JoinUs extends React.Component {
