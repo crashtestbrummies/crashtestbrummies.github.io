@@ -18,7 +18,7 @@
     "position": "Blocker",
     "image": "images/urbs.jpg",
     "peaky_image": "images/urbs_peaky.jpg",
-    "number": "0110"
+    "number": "11"
   },
   {
     "name": "Villon Aero",
@@ -35,7 +35,7 @@
     "number": "14"
   },
   {
-    "name": "Matt Demon",
+    "name": "Mat Demon",
     "position": "Blocker",
     "image": "images/matt.jpg",
     "peaky_image": "images/matt_peaky.jpg",
@@ -159,13 +159,6 @@
     "image": "images/jason.jpg",
     "peaky_image": "images/jason_peaky.jpg",
     "number": "712"
-  },
-  {
-    "name": "Matt Demon",
-    "position": "Blocker",
-    "image": "images/matt.jpg",
-    "peaky_image": "images/matt_peaky.jpg",
-    "number": ""
   },
   {
     "name": "El",
