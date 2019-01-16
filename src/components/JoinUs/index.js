@@ -1,5 +1,4 @@
 import React from 'react'
-import Grid from 'react-css-grid'
 
 import Markdown from 'markdown-it'
 
@@ -20,9 +19,7 @@ class JoinUs extends React.Component {
     return (
       <section id={'join-us'}>
         <h2>Join us</h2>
-        <Grid>
-          <div dangerouslySetInnerHTML={{ __html: content }} />
-        </Grid>
+        <div dangerouslySetInnerHTML={{ __html: content }} />
       </section>
     )
   }

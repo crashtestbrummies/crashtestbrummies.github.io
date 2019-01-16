@@ -1,10 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import TeamList from '../components/TeamList'
-import EventsList from '../components/EventsList'
+// import EventsList from '../components/EventsList'
 import JoinUs from '../components/JoinUs'
 import FAQs from '../components/FAQs'
-import InstagramList from '../components/InstagramList'
+// import InstagramList from '../components/InstagramList'
 import GamesList from '../components/GamesList'
 import Layout from '../components/layout'
 import Section from '../components/Section'
@@ -12,7 +12,8 @@ import Section from '../components/Section'
 class IndexPage extends React.Component {
   render () {
     const {
-      allPlayersJson, allFacebookEvent, allInstaNode,
+      allPlayersJson,
+      // allFacebookEvent, allInstaNode,
       site, allGamesNode, logo, heroText, hero
     } = this.props.data
     return (

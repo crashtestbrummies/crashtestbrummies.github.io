@@ -1,5 +1,4 @@
 import React from 'react'
-import Grid from 'react-css-grid'
 import Event from '../Event'
 
 class EventsList extends React.Component {
@@ -10,7 +9,7 @@ class EventsList extends React.Component {
   }
 
   renderList () {
-    const {edges} = this.props.data
+    const { edges } = this.props.data
     return edges.map(this.renderListItem)
   }
 
@@ -18,9 +17,7 @@ class EventsList extends React.Component {
     return (
       <section>
         <h2>Events</h2>
-        <Grid>
-          {this.renderList()}
-        </Grid>
+        {this.renderList()}
       </section>
     )
   }
