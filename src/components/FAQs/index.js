@@ -1,6 +1,5 @@
 import React from 'react'
-import Grid from 'react-css-grid'
-import { Title, Description } from './styles.js'
+import { List, Title, Description } from './styles.js'
 import Markdown from 'markdown-it'
 
 const md = new Markdown({
@@ -47,11 +46,9 @@ class FAQs extends React.Component {
     return (
       <section>
         <h2>FAQs</h2>
-        <Grid>
-          <dl>
-            {content.map(this.renderFAQ)}
-          </dl>
-        </Grid>
+        <List>
+          {content.map(this.renderFAQ)}
+        </List>
       </section>
     )
   }
