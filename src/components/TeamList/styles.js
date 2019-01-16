@@ -11,3 +11,7 @@ export const Item = styled.div`
 
   ${media.tablet`flex: 0 1 50%;`}
 `
+
+export const Header = styled.h2`
+  margin-bottom: 0.75em;
+`

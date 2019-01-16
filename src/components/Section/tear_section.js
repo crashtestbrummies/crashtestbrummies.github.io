@@ -6,18 +6,19 @@ import media from '../_helpers/media'
 
 const Wrapper = styled.div`
   background: #f5be0b;
-  margin-bottom: 6em;
+  margin-top: -1.5em;
+  margin-bottom: 3em;
   color: #010101;
   text-align: center;
   transform: rotate(-2deg);
   width: 110%;
   margin-left: -5%;
 
-
   ${media.tablet`
       transform: rotate(0deg);
       width: 100%;
       margin-left: 0%;
+      margin-top: 0;
       margin-bottom: 2em;
   `}
 `

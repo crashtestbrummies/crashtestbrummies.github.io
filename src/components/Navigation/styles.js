@@ -8,7 +8,7 @@ export const NavBar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  height: 200px;
   position: relative;
   z-index: 2;
 
@@ -30,7 +30,7 @@ export const LogoLink = styled.a`
 `
 
 export const NavLink = styled(Link)`
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bold;
   color: #010101;
   text-decoration: none;

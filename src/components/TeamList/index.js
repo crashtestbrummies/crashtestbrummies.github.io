@@ -1,6 +1,6 @@
 import React from 'react'
 import TeamMember from '../TeamMemeber'
-import { Wrapper, Item } from './styles.js'
+import { Wrapper, Item, Header } from './styles.js'
 
 class TeamList extends React.Component {
   renderListItem (edge, i) {
@@ -17,7 +17,7 @@ class TeamList extends React.Component {
   render () {
     return (
       <section id={'team'}>
-        <h2>The Team</h2>
+        <Header>The Team</Header>
         <Wrapper>
           {this.renderList()}
         </Wrapper>
