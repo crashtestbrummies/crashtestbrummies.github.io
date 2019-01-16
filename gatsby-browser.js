@@ -4,14 +4,3 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-const anchorate = require('anchorate').anchorate
-
-exports.onRouteUpdate = () => {
-  anchorate({
-    scroller: function (element) {
-      if (!element) return false
-      element.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      return true
-    }
-  })
-}

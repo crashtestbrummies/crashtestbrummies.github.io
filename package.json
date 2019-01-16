@@ -12,6 +12,7 @@
     "gatsby": "^2.0.85",
     "gatsby-image": "^2.0.14",
     "gatsby-link": "^2.0.4",
+    "gatsby-plugin-manifest": "^2.0.13",
     "gatsby-plugin-offline": "^2.0.6",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-sharp": "^2.0.6",
@@ -38,7 +39,8 @@
     "develop": "gatsby develop --host 0.0.0.0",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public --branch master"
+    "deploy": "gatsby build && gh-pages -d public --branch master",
+    "deployNoBuild": "gh-pages -d public --branch master"
   },
   "devDependencies": {
     "prettier": "^1.11.1"
