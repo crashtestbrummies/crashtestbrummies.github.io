@@ -10,7 +10,7 @@ const Wrapper = styled.section`
   background: #010101;
 `
 
-const TemplateWrapper = ({ site, logo, hero, heroText, children }) => {
+const TemplateWrapper = ({ site, logo, hero, heroText, sponsors, children }) => {
   return (
     <Wrapper>
       <SanitiseCSS />
@@ -18,7 +18,7 @@ const TemplateWrapper = ({ site, logo, hero, heroText, children }) => {
       <Header data={site} logo={logo} hero={hero} heroText={heroText} />
       {children}
       <Section>
-        <Footer data={site} />
+        <Footer data={{ ...site, sponsors }} />
       </Section>
     </Wrapper>
   )

@@ -16,3 +16,13 @@ export const FooterLink = styled.a`
   text-decoration: none;
   text-transform: uppercase;
 `
+
+export const SponsorList = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5em 0 2em;
+`
+
+export const Sponsor = styled.div`
+  flex: 0 1 33%;
+`
