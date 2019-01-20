@@ -22,7 +22,6 @@ class Footer extends React.Component {
 
   renderSponsors () {
     const { sponsors } = this.props.data
-    console.log(sponsors)
 
     return (
       <SponsorList>
@@ -49,7 +48,6 @@ class Footer extends React.Component {
   }
 
   render () {
-    console.log(this.props)
     const { facebook, instagram } = this.props.data.siteMetadata
     return (
       <Wrapper>

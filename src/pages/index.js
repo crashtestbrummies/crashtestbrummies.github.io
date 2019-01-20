@@ -14,10 +14,10 @@ class IndexPage extends React.Component {
     const {
       allPlayersJson,
       // allFacebookEvent, allInstaNode,
-      site, allGamesNode, logo, heroText, hero
+      site, allGamesNode, logo, heroText, hero, sponsors
     } = this.props.data
     return (
-      <Layout site={site} logo={logo.edges[0].node} heroText={heroText.edges[0].node} hero={hero.edges[0].node}>
+      <Layout site={site} logo={logo.edges[0].node} heroText={heroText.edges[0].node} hero={hero.edges[0].node} sponsors={sponsors.edges}>
         <Section theme='tear'>
           <h2>Who are we?</h2>
           <p>The West Midlands' first men's Roller Derby team. Established in 2012, became members of the MRDA in 2015, and achieved world ranking status in 2018. We have members from all over Brum and beyond! All skatin', no hatin'!</p>
@@ -51,13 +51,13 @@ query TeamQuery {
       }
     }
   }
-  allFacebookEvent(limit: 2) {
-    edges {
-      node {
-        ...Event_details
-      }
-    }
-  }
+  # allFacebookEvent(limit: 2) {
+  #   edges {
+  #     node {
+  #       ...Event_details
+  #     }
+  #   }
+  # }
   allInstaNode {
     edges {
       node {
@@ -95,6 +95,13 @@ query TeamQuery {
     edges {
       node {
         ...Header_hero_text
+      }
+    }
+  },
+  sponsors: allSponsorsJson {
+    edges {
+      node {
+        ...Footer_sponsor
       }
     }
   }
