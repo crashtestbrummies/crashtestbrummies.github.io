@@ -19,18 +19,18 @@ class Event extends React.Component {
 }
 export default Event
 
-export const EventFragment = graphql`
-  fragment Event_details on FacebookEvent {
-    name
-    description
-    place {
-      id
-      name
-      location {
-        street
-        city
-        zip
-      }
-    }
-  }
- `
+// export const EventFragment = graphql`
+//   fragment Event_details on FacebookEvent {
+//     name
+//     description
+//     place {
+//       id
+//       name
+//       location {
+//         street
+//         city
+//         zip
+//       }
+//     }
+//   }
+//  `

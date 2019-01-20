@@ -18,12 +18,12 @@ module.exports = {
         path: `${__dirname}/src/data/`
       }
     },
-    {
-      resolve: `gatsby-source-fbevents`,
-      options: {
-        key: process.env.FB_TOKEN
-      }
-    },
+    // {
+    //   resolve: `gatsby-source-fbevents`,
+    //   options: {
+    //     key: process.env.FB_TOKEN
+    //   }
+    // },
     {
       resolve: `gatsby-source-instagram`,
       options: {
