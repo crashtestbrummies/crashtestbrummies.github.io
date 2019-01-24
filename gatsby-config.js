@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Crash Test Brummies - men\'s roller derby in Birmingham',
-    canonical: 'https://crashtestbrummies.github.io/',
+    canonical: 'https://crashtestbrummies.co.uk/',
     description: 'Men\'s Roller Derby Association (MRDA) Team based in Birmingham, UK.',
     facebook: 'http://facebook.com/crashTestBrummies/',
     instagram: 'https://www.instagram.com/crashtestbrummies/',
@@ -75,6 +75,15 @@ module.exports = {
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: `standalone`,
         icon: `src/data/images/crash_test_brummies-logo.png` // This path is relative to the root of the site.
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GA_TOKEN,
+        anonymize: true,
+        respectDNT: true,
+        cookieDomain: `crashtestbrummies.co.uk`
       }
     }
   ]
