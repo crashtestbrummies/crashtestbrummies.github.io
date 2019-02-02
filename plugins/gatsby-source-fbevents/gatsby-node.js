@@ -39,6 +39,7 @@ exports.sourceNodes = (
     fetch(apiUrl)
       .then(res => res.json())
       .then(data => {
+        console.log(data)
         data.events.data.forEach(
           event => createNode(processEvent(event))
         )

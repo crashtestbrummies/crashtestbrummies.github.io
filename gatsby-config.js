@@ -1,13 +1,26 @@
+const prismicHtmlSerializer = require('./src/gatsby/htmlSerializer.js')
+
 module.exports = {
   siteMetadata: {
     title: 'Crash Test Brummies - men\'s roller derby in Birmingham',
-    canonical: 'https://crashtestbrummies.co.uk/',
+    canonical: 'https://www.crashtestbrummies.co.uk/',
     description: 'Men\'s Roller Derby Association (MRDA) Team based in Birmingham, UK.',
     facebook: 'http://facebook.com/crashTestBrummies/',
     instagram: 'https://www.instagram.com/crashtestbrummies/',
     email: 'info@crashtestbrummies.co.uk'
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'ctb-website',
+        accessToken: `${process.env.PRISMIC_API_KEY}`,
+        // Get the correct URLs in blog posts
+        linkResolver: () => team => `/team/${team.uid}`,
+        // PrismJS highlighting for labels and slices
+        htmlSerializer: () => prismicHtmlSerializer
+      }
+    },
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-json',
@@ -78,12 +91,11 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-gtag`,
       options: {
         trackingId: process.env.GA_TOKEN,
         anonymize: true,
-        respectDNT: true,
-        cookieDomain: `crashtestbrummies.co.uk`
+        head: true
       }
     }
   ]
