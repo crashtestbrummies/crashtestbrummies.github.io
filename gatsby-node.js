@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { error, result } = await wrapper(
     graphql(`
       {
-        allPrismicTeamMember {
+        allPrismicGameSchedule {
           edges {
             node {
               id
@@ -20,18 +20,14 @@ exports.createPages = async ({ graphql, actions }) => {
     `)
   )
 
-  console.log('error, result')
-  console.log(error, result)
-
   if (!error) {
-    const teamMembersList = result.data.allPrismicTeamMember.edges
-    console.log(teamMembersList)
-    const teamMemberTemplate = path.resolve('src/templates/teamMember.js')
-    teamMembersList.forEach(edge => {
+    const schedulesList = result.data.allPrismicGameSchedule.edges
+    const scheduleTemplate = path.resolve('src/templates/schedule.js')
+    schedulesList.forEach(edge => {
       // The uid you assigned in Prismic is the slug!
       createPage({
-        path: `/team/${edge.node.uid}`,
-        component: teamMemberTemplate,
+        path: `/schedule/${edge.node.uid}`,
+        component: scheduleTemplate,
         context: {
           // Pass the unique ID (uid) through context so the template can filter by it
           uid: edge.node.uid
@@ -41,7 +37,4 @@ exports.createPages = async ({ graphql, actions }) => {
 
     return
   }
-
-  console.log(error)
-  console.log(error)
 }

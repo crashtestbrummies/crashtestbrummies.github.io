@@ -6,9 +6,23 @@ import Img from 'gatsby-image'
 import { HeroContainer, HeroTextImage } from './styles.js'
 
 class Header extends React.Component {
+  renderHero () {
+    const { heroText, hero } = this.props
+
+    if (!hero) return null
+    return (
+      <HeroContainer>
+        <HeroTextImage>
+          <Img fluid={heroText.childImageSharp.fluid} />
+        </HeroTextImage>
+        <Img fluid={hero.childImageSharp.fluid} />
+      </HeroContainer>
+    )
+  }
+
   render () {
     const { title, canonical, description } = this.props.data.siteMetadata
-    const { logo, heroText, hero } = this.props
+    const { logo } = this.props
     return (
       <div>
         <Helmet>
@@ -19,12 +33,7 @@ class Header extends React.Component {
           <meta property='og:type' content='website' />
         </Helmet>
         <Navigation logo={logo} title={title} canonical={canonical} />
-        <HeroContainer>
-          <HeroTextImage>
-            <Img fluid={heroText.childImageSharp.fluid} />
-          </HeroTextImage>
-          <Img fluid={hero.childImageSharp.fluid} />
-        </HeroContainer>
+        {this.renderHero()}
       </div>
     )
   }
