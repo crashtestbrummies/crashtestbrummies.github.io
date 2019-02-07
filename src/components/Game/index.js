@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import moment from 'moment'
 import { PlayedRow, NotPlayedRow } from './styles.js'
 
 const brummiesStyle = { backgroundColor: '#fff' }
@@ -9,14 +10,16 @@ class Game extends React.Component {
     const { Date, Home_Team, Visitor_Team, Score, Score_2 } = this.props.game
     const homeStyle = Home_Team === 'Brummies' ? brummiesStyle : {}
     const visitorStyle = Visitor_Team === 'Brummies' ? brummiesStyle : {}
+    const date = moment(Date)
+    const Row = date.isBefore(moment()) ? PlayedRow : NotPlayedRow
     return (
-      <PlayedRow>
-        <td>{Date}</td>
+      <Row>
+        <td>{date.format('DD/MM/YY')}</td>
         <td style={homeStyle}>{Home_Team}</td>
         <td style={homeStyle}>{Score}</td>
         <td style={visitorStyle}>{Visitor_Team}</td>
         <td style={visitorStyle}>{Score_2}</td>
-      </PlayedRow>
+      </Row>
     )
   }
 }

@@ -1,10 +1,11 @@
 const crypto = require(`crypto`)
 const fetchData = require('./fetchData.js')
+const moment = require('moment')
 
 function processDatum (datum) {
   console.log(datum)
-  const date = new Date(datum.Date)
-  const id = '' + date.getDate() + date.getMonth() + date.getYear() + datum.Score + datum.Score_2
+  const date = moment(datum.Date, "MM-DD-YYYY").format()
+  const id = '' + date + datum.Score + datum.Score_2
   const node = {
     id,
     date,
