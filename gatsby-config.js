@@ -21,6 +21,14 @@ module.exports = {
         htmlSerializer: () => prismicHtmlSerializer
       }
     },
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ['Product', 'Sku'],
+        secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFiles: false
+      }
+    },
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-stripe',
@@ -30,14 +38,6 @@ module.exports = {
       options: {
         name: `data`,
         path: `${__dirname}/src/data/`
-      }
-    },
-    {
-      resolve: `gatsby-source-stripe`,
-      options: {
-        objects: ['Product', 'Sku'],
-        secretKey: process.env.STRIPE_SECRET_KEY,
-        downloadFiles: false
       }
     },
     // {
