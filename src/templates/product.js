@@ -48,10 +48,10 @@ const setupStripe = function () {
   })
 }
 
-const Product = ({ data: { stripeProduct, allStripeSku, teamMembers, site, logo, sponsors }, location }) => {
+const Product = ({ data: { stripeProduct, allStripeSku, teamMembers, site, logo }, location }) => {
   let stripe = setupStripe()
   return (
-    <Layout site={site} logo={logo.edges[0].node} sponsors={sponsors.edges}>
+    <Layout site={site} logo={logo.edges[0].node} >
       <Section theme={`tear`}>
         <Details data={stripeProduct} />
         <SkusWrapper>
@@ -100,13 +100,6 @@ export const pageQuery = graphql`
     edges {
       node {
         ...Navigation_logo
-      }
-    }
-  }
-  sponsors: allSponsorsJson {
-    edges {
-      node {
-        ...Footer_sponsor
       }
     }
   }

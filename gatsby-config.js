@@ -11,6 +11,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data/`
+      }
+    },
+    {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: 'ctb-website',
@@ -21,25 +28,10 @@ module.exports = {
         htmlSerializer: () => prismicHtmlSerializer
       }
     },
-    {
-      resolve: `gatsby-source-stripe`,
-      options: {
-        objects: ['Product', 'Sku'],
-        secretKey: process.env.STRIPE_SECRET_KEY,
-        downloadFiles: false
-      }
-    },
+
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-stripe',
-    'gatsby-transformer-json',
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/src/data/`
-      }
-    },
     // {
     //   resolve: `gatsby-source-fbevents`,
     //   options: {
@@ -69,6 +61,14 @@ module.exports = {
             'latin'
           ]
         }
+      }
+    },
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ['Product', 'Sku'],
+        secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFiles: false
       }
     },
     // This plugin exposes helper functions for processing

@@ -3,15 +3,16 @@ import TeamMember from '../TeamMemeber'
 import { Wrapper, Item, Header } from './styles.js'
 
 class TeamList extends React.Component {
-  renderListItem (edge, i) {
+  renderListItem (item, i) {
     return (
-      <Item key={`team_item_${i}`}><TeamMember memeber={edge.node} /></Item>
+      <Item key={`team_item_${i}`}><TeamMember memeber={item.primary} /></Item>
     )
   }
 
   renderList () {
-    const { edges } = this.props.data
-    return edges.map(this.renderListItem)
+    console.log(this.props.data)
+    const { node: { data: { body } } } = this.props.data.edges[0]
+    return body.map(this.renderListItem)
   }
 
   render () {

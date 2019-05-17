@@ -106,9 +106,9 @@ const Details = ({ data: { game_name, game_date, game_link, venue_address, venue
   )
 }
 
-const Schedule = ({ data: { prismicGameSchedule, teamMembers, site, logo, sponsors }, location }) => {
+const Schedule = ({ data: { prismicGameSchedule, teamMembers, site, logo }, location }) => {
   return (
-    <Layout site={site} logo={logo.edges[0].node} sponsors={sponsors.edges}>
+    <Layout site={site} logo={logo.edges[0].node} >
       <Details data={prismicGameSchedule.data} />
       <ScheduleEvents data={prismicGameSchedule.data} />
       <Parking data={prismicGameSchedule.data} />
@@ -197,13 +197,6 @@ export const pageQuery = graphql`
     edges {
       node {
         ...Navigation_logo
-      }
-    }
-  }
-  sponsors: allSponsorsJson {
-    edges {
-      node {
-        ...Footer_sponsor
       }
     }
   }

@@ -18,10 +18,10 @@ class SchedulesPage extends React.Component {
   render () {
     const {
       schedules,
-      site, logo, sponsors
+      site, logo
     } = this.props.data
     return (
-      <Layout site={site} logo={logo.edges[0].node} sponsors={sponsors.edges}>
+      <Layout site={site} logo={logo.edges[0].node} >
         <Section theme='tear'>
           <Title>Schedules</Title>
           <ul>
@@ -71,13 +71,6 @@ export const query = graphql`
     edges {
       node {
         ...Navigation_logo
-      }
-    }
-  }
-  sponsors: allSponsorsJson {
-    edges {
-      node {
-        ...Footer_sponsor
       }
     }
   }

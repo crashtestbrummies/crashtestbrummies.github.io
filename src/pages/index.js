@@ -12,19 +12,19 @@ import Section from '../components/Section'
 class IndexPage extends React.Component {
   render () {
     const {
-      allPlayersJson,
+      aTeam,
       // allFacebookEvent, allInstaNode,
-      site, allGamesNode, logo, heroText, hero, sponsors
+      site, allGamesNode, logo, heroText, hero
     } = this.props.data
     return (
-      <Layout site={site} logo={logo.edges[0].node} heroText={heroText.edges[0].node} hero={hero.edges[0].node} sponsors={sponsors.edges}>
+      <Layout site={site} logo={logo.edges[0].node} heroText={heroText.edges[0].node} hero={hero.edges[0].node} >
         <Section theme='tear'>
           <h2>Who are we?</h2>
           <p>The West Midlands' first men's Roller Derby team. Established in 2012, became members of the MRDA in 2015, and achieved world ranking status in 2018. We have members from all over Brum and beyond! All skatin', no hatin'!</p>
           <p>We have an open door policy for all existing derby skaters and we are always on the look out for new skaters to join our ranks.</p>
         </Section>
         <Section>
-          <TeamList data={allPlayersJson} />
+          <TeamList data={aTeam} />
         </Section>
         <Section theme='tear'>
           <JoinUs />
@@ -44,20 +44,19 @@ export default IndexPage
 
 export const query = graphql`
 query TeamQuery {
-  allPlayersJson {
+  aTeam: allPrismicRoster(filter: {data: {roster_name: {text: {eq: "A Team"}}}}) {
     edges {
       node {
-        ...TeamMember_details
+        id
+        data {
+          body {
+            ...TeamMember_details
+          }
+        }
       }
     }
   }
-  # allFacebookEvent(limit: 2) {
-  #   edges {
-  #     node {
-  #       ...Event_details
-  #     }
-  #   }
-  # }
+
   allInstaNode {
     edges {
       node {
@@ -95,13 +94,6 @@ query TeamQuery {
     edges {
       node {
         ...Header_hero_text
-      }
-    }
-  },
-  sponsors: allSponsorsJson {
-    edges {
-      node {
-        ...Footer_sponsor
       }
     }
   }

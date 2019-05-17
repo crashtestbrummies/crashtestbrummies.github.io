@@ -11,10 +11,10 @@ class TeamMember extends React.Component {
   }
 
   render () {
-    const { name, number, image } = this.props.memeber
+    const { name, number, headshot: { localFile } } = this.props.memeber
     return (
       <Wrapper>
-        <Img fluid={image.childImageSharp.fluid} alt={name} />
+        <Img fluid={localFile.childImageSharp.fluid} alt={name} />
         <Text>{number} {'//'} {name}</Text>
       </Wrapper>
     )
@@ -23,27 +23,24 @@ class TeamMember extends React.Component {
 export default TeamMember
 
 export const TeamMemberFragment = graphql`
-  fragment TeamMember_details on PlayersJson {
-    id
+fragment TeamMember_details on PrismicRosterBodyName {
+  slice_type
+  id
+  primary {
     name
     number
-
-    peaky_image {
-      id
-      childImageSharp {
-        fluid(maxWidth: 170) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-
-    image {
-      id
-      childImageSharp {
-        fluid(maxWidth: 288) {
-          ...GatsbyImageSharpFluid_tracedSVG
+    headshot {
+      alt
+      copyright
+      url
+      localFile {
+        childImageSharp {
+          fluid(maxWidth: 288) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
         }
       }
     }
   }
+}
 `
