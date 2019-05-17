@@ -3,7 +3,6 @@ const fetchData = require('./fetchData.js')
 const moment = require('moment')
 
 function processDatum (datum) {
-  console.log(datum)
   const date = moment(datum.Date, "MM-DD-YYYY").format()
   const id = '' + date + datum.Score + datum.Score_2
   const node = {
