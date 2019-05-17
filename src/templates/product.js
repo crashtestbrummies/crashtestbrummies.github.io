@@ -43,6 +43,7 @@ const Details = ({ data: { name, caption, description, images } }) => {
 }
 
 const setupStripe = function () {
+  if (typeof window === 'undefined') return {}
   return window.Stripe('pk_test_HJvmGm31rcEMthB1vy3uvels00W8d22CJW', {
     betas: ['checkout_beta_4']
   })
