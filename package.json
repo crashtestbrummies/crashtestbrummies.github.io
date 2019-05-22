@@ -9,6 +9,7 @@
     "babel-plugin-styled-components": "^1.8.0",
     "cheerio": "^1.0.0-rc.2",
     "cheerio-tableparser": "^1.0.1",
+    "dotenv": "^8.0.0",
     "gatsby": "^2.0.85",
     "gatsby-cli": "^2.5.14",
     "gatsby-image": "^2.0.14",

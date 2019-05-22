@@ -42,15 +42,15 @@ const Details = ({ data: { name, caption, description, images } }) => {
   )
 }
 
-const setupStripe = function () {
+const setupStripe = function (stripe_publishable_key) {
   if (typeof window === 'undefined') return {}
-  return window.Stripe('pk_test_HJvmGm31rcEMthB1vy3uvels00W8d22CJW', {
+  return window.Stripe( stripe_publishable_key, {
     betas: ['checkout_beta_4']
   })
 }
 
 const Product = ({ data: { stripeProduct, allStripeSku, teamMembers, site, logo }, location }) => {
-  let stripe = setupStripe()
+  let stripe = setupStripe(site.siteMetadata.stripe_publishable_key)
   return (
     <Layout site={site} logo={logo.edges[0].node} >
       <Section theme={`tear`}>
@@ -93,6 +93,9 @@ export const pageQuery = graphql`
     }
 
   site {
+    siteMetadata {
+      stripe_publishable_key
+    }
     ...Navigation_details
     ...Header_details
     ...Footer_details

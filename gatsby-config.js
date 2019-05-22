@@ -1,3 +1,4 @@
+require('dotenv').config()
 const prismicHtmlSerializer = require('./src/gatsby/htmlSerializer.js')
 
 module.exports = {
@@ -7,7 +8,8 @@ module.exports = {
     description: 'Men\'s Roller Derby Association (MRDA) Team based in Birmingham, UK.',
     facebook: 'http://facebook.com/crashTestBrummies/',
     instagram: 'https://www.instagram.com/crashtestbrummies/',
-    email: 'info@crashtestbrummies.co.uk'
+    email: 'info@crashtestbrummies.co.uk',
+    stripe_publishable_key: process.env.STRIPE_PUBLISHABLE_KEY
   },
   plugins: [
     {
