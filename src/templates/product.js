@@ -15,11 +15,25 @@ export const Title = styled.h1`
   `}
 `
 
+const SuccessSection = styled.section`
+  background-color: #91fb91;
+  color: #004400;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 0.8em;
+  text-align: center;
+  padding: .5em;
+  text-transform: uppercase;
+`
+
 const SkusWrapper = styled.div`
   display: flex;
-  flexDirection: row;
-  flexWrap: wrap;
-  justifyContent: 'space-between';
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: 'space-between';
   padding: 1rem 0 1rem 0;
 `
 
@@ -42,23 +56,33 @@ const Details = ({ data: { name, caption, description, images } }) => {
   )
 }
 
-const setupStripe = function (stripe_publishable_key) {
+const Success = ({ pageContext: { success } }) => {
+  if (!success) return null
+  return (
+    <SuccessSection>
+      <p>Thank you for your purchase!</p>
+    </SuccessSection>
+  )
+}
+
+const setupStripe = function (stripePublishableKey) {
   if (typeof window === 'undefined') return {}
-  return window.Stripe( stripe_publishable_key, {
+  return window.Stripe(stripePublishableKey, {
     betas: ['checkout_beta_4']
   })
 }
 
-const Product = ({ data: { stripeProduct, allStripeSku, teamMembers, site, logo }, location }) => {
+const Product = ({ pageContext, data: { stripeProduct, allStripeSku, teamMembers, site, logo }, location }) => {
   let stripe = setupStripe(site.siteMetadata.stripe_publishable_key)
   return (
     <Layout site={site} logo={logo.edges[0].node} >
+      <Success pageContext={pageContext} />
       <Section theme={`tear`}>
         <Details data={stripeProduct} />
         <SkusWrapper>
-        {allStripeSku.edges.map(({ node: sku }) => (
-          <SkuCard key={sku.id} sku={sku} stripe={stripe} />
-        ))}
+          {allStripeSku.edges.map(({ node: sku }) => (
+            <SkuCard key={sku.id} sku={sku} stripe={stripe} />
+          ))}
         </SkusWrapper>
       </Section>
     </Layout>

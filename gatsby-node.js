@@ -50,13 +50,23 @@ exports.createPages = async ({ graphql, actions }) => {
     console.log('product lists', result.data.allStripeProduct)
     const productTemplate = path.resolve('src/templates/product.js')
     productsList.forEach(edge => {
-      // The uid you assigned in Prismic is the slug!
       createPage({
         path: `/shop/${edge.node.url}`,
         component: productTemplate,
         context: {
           // Pass the unique ID (uid) through context so the template can filter by it
-          id: edge.node.id
+          id: edge.node.id,
+          success: false
+        }
+      })
+
+      createPage({
+        path: `/shop/${edge.node.url}/success`,
+        component: productTemplate,
+        context: {
+          // Pass the unique ID (uid) through context so the template can filter by it
+          id: edge.node.id,
+          success: true
         }
       })
     })
