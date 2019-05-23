@@ -1,4 +1,5 @@
 const path = require('path')
+var slugify = require('slugify')
 
 // graphql function returns a promise so we can use this little promise helper to have a nice result/error state
 const wrapper = promise => promise.then(result => ({ result, error: null })).catch(error => ({ error, result: null }))
@@ -22,7 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
           edges {
             node {
               id
-              url
+              name
             }
           }
         }
@@ -50,8 +51,9 @@ exports.createPages = async ({ graphql, actions }) => {
     console.log('product lists', result.data.allStripeProduct)
     const productTemplate = path.resolve('src/templates/product.js')
     productsList.forEach(edge => {
+      const slug = slugify(edge.node.name)
       createPage({
-        path: `/shop/${edge.node.url}`,
+        path: `/shop/${slug}`,
         component: productTemplate,
         context: {
           // Pass the unique ID (uid) through context so the template can filter by it
@@ -61,7 +63,7 @@ exports.createPages = async ({ graphql, actions }) => {
       })
 
       createPage({
-        path: `/shop/${edge.node.url}/success`,
+        path: `/shop/${slug}/success`,
         component: productTemplate,
         context: {
           // Pass the unique ID (uid) through context so the template can filter by it

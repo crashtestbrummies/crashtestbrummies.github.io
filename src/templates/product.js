@@ -45,13 +45,13 @@ export const LightLink = styled.a`
   color: #f5be0b;
 `
 
-const Details = ({ data: { name, caption, description, images } }) => {
+const Details = ({ data: { name, caption, description, images }, skus: { edges } }) => {
   return (
     <React.Fragment>
       <Title>{name}</Title>
       <p>{caption}</p>
       <p>{description}</p>
-      <img src={images[0]} />
+      <img src={edges[0].node.image} />
     </React.Fragment>
   )
 }
@@ -78,7 +78,7 @@ const Product = ({ pageContext, data: { stripeProduct, allStripeSku, teamMembers
     <Layout site={site} logo={logo.edges[0].node} >
       <Success pageContext={pageContext} />
       <Section theme={`tear`}>
-        <Details data={stripeProduct} />
+        <Details data={stripeProduct} skus={allStripeSku} />
         <SkusWrapper>
           {allStripeSku.edges.map(({ node: sku }) => (
             <SkuCard key={sku.id} sku={sku} stripe={stripe} />
@@ -98,15 +98,16 @@ export const pageQuery = graphql`
   query ProductById($id: String!) {
     stripeProduct(id: {eq: $id}) {
       name
-      caption
-      images
-      description
+      # caption
+      # images
+      # description
     }
 
     allStripeSku(filter: {product: {id: {eq: $id}}}) {
       edges {
         node {
           id
+          image
           currency
           price
           attributes {
