@@ -11,10 +11,10 @@ const CardStyles = styled.div`
   background-color: #fff;
   border-radius: 6px;
   min-width: 300px;
-  margin: auto;
+  margin: auto auto 1em;
 
   ${media.tablet`
-    margin: 0;
+    margin: 0 0 1em;
   `}
 `
 
