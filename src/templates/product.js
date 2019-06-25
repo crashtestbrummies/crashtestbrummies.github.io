@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import media from '../components/_helpers/media'
@@ -48,6 +49,11 @@ export const LightLink = styled.a`
 const Details = ({ data: { name, caption, description, images }, skus: { edges } }) => {
   return (
     <React.Fragment>
+      <Helmet>
+        <title>{name}</title>
+        <meta name='description' content={description} />
+        <meta property='og:image' content={edges[0].node.image} />
+      </Helmet>
       <Title>{name}</Title>
       <p>{caption}</p>
       <p>{description}</p>
