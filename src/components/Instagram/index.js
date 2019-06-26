@@ -14,15 +14,15 @@ class Instagram extends React.Component {
 }
 export default Instagram
 
-export const InstagramFragment = graphql`
-  fragment Instagram_details on InstaNode {
-    id
-    url
-    original
-    thumbnails {
-      src
-      config_width
-      config_height
-    }
-  }
- `
+// export const InstagramFragment = graphql`
+//   fragment Instagram_details on InstaNode {
+//     id
+//     url
+//     original
+//     thumbnails {
+//       src
+//       config_width
+//       config_height
+//     }
+//   }
+//  `
