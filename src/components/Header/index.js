@@ -28,7 +28,6 @@ class Header extends React.Component {
         <Helmet>
           <meta charSet='utf-8' />
           <title>{title}</title>
-          <link rel='canonical' href={canonical} />
           <meta name='description' content={description} />
           <meta property='og:type' content='website' />
         </Helmet>
