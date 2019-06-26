@@ -40,12 +40,12 @@ module.exports = {
     //     key: process.env.FB_TOKEN
     //   }
     // },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `crashtestbrummies`
-      }
-    },
+    // {
+    //   resolve: `gatsby-source-instagram`,
+    //   options: {
+    //     username: `crashtestbrummies`
+    //   }
+    // },
     {
       resolve: `gatsby-source-ftsgames`,
       options: {

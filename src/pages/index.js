@@ -57,13 +57,14 @@ query TeamQuery {
     }
   }
 
-  allInstaNode {
-    edges {
-      node {
-        ...Instagram_details
-      }
-    }
-  }
+  #allInstaNode {
+  # edges {
+  #    node {
+  #      ...Instagram_details
+  #    }
+  #  }
+  #}
+
   allGamesNode(limit: 5, sort: {fields: [date], order: DESC}) {
     edges {
       node {
