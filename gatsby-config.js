@@ -3,9 +3,9 @@ const prismicHtmlSerializer = require('./src/gatsby/htmlSerializer.js')
 
 module.exports = {
   siteMetadata: {
-    title: 'Crash Test Brummies - Men\'s roller derby in Birmingham',
+    title: 'Crash Test Brummies - Open To All (OTA) Roller Derby in Birmingham, UK',
     canonical: 'https://www.crashtestbrummies.co.uk/',
-    description: 'Men\'s Roller Derby Association (MRDA) Team based in Birmingham, UK.',
+    description: 'Open To All (OTA) Team based in Birmingham, UK.',
     facebook: 'http://facebook.com/crashTestBrummies/',
     instagram: 'https://www.instagram.com/crashtestbrummies/',
     email: 'info@crashtestbrummies.co.uk',
