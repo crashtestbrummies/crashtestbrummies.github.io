@@ -10,7 +10,6 @@ class TeamList extends React.Component {
   }
 
   renderList () {
-    console.log(this.props.data)
     const { node: { data: { body } } } = this.props.data.edges[0]
     return body.map(this.renderListItem)
   }
