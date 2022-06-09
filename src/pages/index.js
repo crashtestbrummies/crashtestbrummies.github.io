@@ -12,8 +12,7 @@ import Section from '../components/Section'
 class IndexPage extends React.Component {
   render () {
     const {
-      aTeam,
-      // allFacebookEvent, allInstaNode,
+      aTeam, faqs,
       site, allGamesNode, logo, heroText, hero
     } = this.props.data
     return (
@@ -30,7 +29,7 @@ class IndexPage extends React.Component {
           <JoinUs />
         </Section>
         <Section>
-          <FAQs />
+          <FAQs data={faqs} />
         </Section>
         <Section theme='tear'>
           <GamesList data={allGamesNode} />
@@ -57,13 +56,29 @@ query TeamQuery {
     }
   }
 
-  #allInstaNode {
-  # edges {
-  #    node {
-  #      ...Instagram_details
-  #    }
-  #  }
-  #}
+  faqs: allPrismicFaq {
+    edges {
+      node {
+        data {
+          title {
+          text
+        }
+        body {
+            primary {
+              question {
+                html
+                text
+              }
+              answer {
+                html
+                text
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
   allGamesNode(limit: 5, sort: {fields: [date], order: DESC}) {
     edges {
